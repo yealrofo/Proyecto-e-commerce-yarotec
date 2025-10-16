@@ -86,10 +86,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       const addBtn = card.querySelector('[data-action="add"]');
 
       if (viewBtn) {
-        viewBtn.addEventListener("click", () => {
-          window.modalManager.openProductModal(product.id);
-        });
-      }
+  viewBtn.addEventListener("click", () => {
+    window.modalManager.openProductModal(product.id);
+  });
+}
+
 
         });
 
