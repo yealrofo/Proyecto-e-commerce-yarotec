@@ -1,0 +1,608 @@
+{
+"productos":[
+ {
+  "categoria": "Motherboards",
+  "concatenado": "Motherboard asrock b450m hdv",
+  "precio": 320000,
+  "stock": 4,
+  "descripcion": "board ryzen am4 pci 3.0",
+  "IMAGEN  principal": "4503.webp",
+  "2 imagen": "4502.webp",
+  "3 imagen": "4501.webp"
+ },
+ {
+  "categoria": "Motherboards",
+  "concatenado": "Motherboard gigabyte b760m gaming wifi",
+  "precio": 500000,
+  "stock": 4,
+  "descripcion": "board socket 1700, 12th-13 th-14 th argb gaming",
+  "IMAGEN  principal": "b760.1.webp",
+  "2 imagen": "b760.2.webp"
+ },
+ {
+  "categoria": "Accesorios",
+  "concatenado": "Alfombrilla estampada rgb generica",
+  "precio": 40000,
+  "stock": 4,
+  "descripcion": "alfombrilla xxl 80x 30 argb",
+  "IMAGEN  principal": "alfombra1.webp",
+  "2 imagen": "alfombra3.webp",
+  "3 imagen": "alfombra2.webp"
+ },
+ {
+  "categoria": "Accesorios",
+  "concatenado": "Alfombrilla negra rgb generica",
+  "precio": 40000,
+  "stock": 4,
+  "descripcion": "alfombrilla xxl 80x 30 argb",
+  "IMAGEN  principal": "alfnegra1.webp",
+  "2 imagen": "alfnegra2.webp",
+  "3 imagen": "alfnegra3.webp"
+ },
+ {
+  "categoria": "GPU",
+  "concatenado": "GPU asrock 6600 ",
+  "precio": 1000000,
+  "stock": 4,
+  "descripcion": "GPU AMD Radeon RX 6600, 8 GB GDDR6, ideal para gaming en 1080p",
+  "IMAGEN  principal": "as6600.webp"
+ },
+ {
+  "categoria": "GPU",
+  "concatenado": "GPU asrock 9060 gt  8 gb",
+  "precio": 2100000,
+  "stock": 4,
+  "descripcion": "GPU básica con 8 GB, buena para tareas generales y multimedia",
+  "IMAGEN  principal": "as9060.webp"
+ },
+ {
+  "categoria": "Motherboards",
+  "concatenado": "Board b560m board asrock b560m hdv",
+  "precio": 280000,
+  "stock": 4,
+  "descripcion": "Board socket 1200, 11th -10th",
+  "IMAGEN  principal": "560.1.webp",
+  "2 imagen": "560.2.webp"
+ },
+ {
+  "categoria": "Accesorios",
+  "concatenado": "Brazo de monitor generico brazo neumatico monitor",
+  "precio": 900000,
+  "stock": 4,
+  "descripcion": "brazo para monitor  de gas. ",
+  "IMAGEN  principal": "brazo.webp"
+ },
+ {
+  "categoria": "Accesorios",
+  "concatenado": "Camara accion akasoo 7000k",
+  "precio": 350000,
+  "stock": 4,
+  "descripcion": "Camara de acción 4k con control remoto",
+  "IMAGEN  principal": "akaso.1.webp",
+  "2 imagen": "akaso.2.webp"
+ },
+ {
+  "categoria": "Periféricos",
+  "concatenado": "Combo koorui Combo Teclado + mouse koorui",
+  "precio": 100000,
+  "stock": 4,
+  "descripcion": "switche Rojo  tamaño full + mouse 4200 dpi",
+  "IMAGEN  principal": "koorui.1.webp",
+  "2 imagen": "koorui.2.webp",
+  "3 imagen": "koorui.3.webp",
+  "PROMOCION": "si"
+ },
+ {
+  "categoria": "Periféricos",
+  "concatenado": "Combo Teclado gamer Siyoulang tkl",
+  "precio": 100000,
+  "stock": 4,
+  "descripcion": "switche azul  Teclado negro tkl + mouse 4200 dpi",
+  "IMAGEN  principal": "zytkl.1.webp",
+  "2 imagen": "zytkl.2.webp",
+  "3 imagen": "zytkl.3.webp"
+ },
+ {
+  "categoria": "Refrigeración",
+  "concatenado": "Cooler disipador thermalright assassins king 5 tubos ",
+  "precio": 100000,
+  "stock": 4,
+  "descripcion": "disipador tipo torre, argb, 1 ventilador 5 head pipes, am4 am5, intel 1700",
+  "IMAGEN  principal": "ther.1.webp",
+  "2 imagen": "ther.2.webp",
+  "3 imagen": "ther.3.webp"
+ },
+ {
+  "categoria": "RAM",
+  "concatenado": "Corsair Vengeance DDR5 32GB 6000MHz ",
+  "precio": 520000,
+  "stock": 4,
+  "descripcion": "Kit 2x16GB DDR5 CL36",
+  "IMAGEN  principal": "corsair.webp"
+ },
+ {
+  "categoria": "Gabinetes",
+  "concatenado": "gamdias TALOS-E3-WH",
+  "precio": 500000,
+  "stock": 4,
+  "descripcion": "Torre ATX blanca con panel de vidrio templado y diseño elegante",
+  "IMAGEN  principal": "gamdias.webp"
+ },
+ {
+  "categoria": "Gabinetes",
+  "concatenado": "KEDIERS  PC CASE ATX 4 kediers p4",
+  "precio": 600000,
+  "stock": 4,
+  "descripcion": "Gabinete ATX con iluminación RGB, buen flujo de aire y estilo gamer",
+  "IMAGEN  principal": "kediers.webp"
+ },
+ {
+  "categoria": "Refrigeración",
+  "concatenado": "kit ventiladores  SL x 3 fans sl  PWM x3",
+  "precio": 70000,
+  "stock": 4,
+  "descripcion": "ventiladores setx  3 Iluminados",
+  "IMAGEN  principal": "sl.1.webp",
+  "2 imagen": "sl.3.webp",
+  "3 imagen": "sl.4.webp"
+ },
+ {
+  "categoria": "Refrigeración",
+  "concatenado": "kit ventiladores rosenwill x 5 fans rosenwill x5+ controladora",
+  "precio": 150000,
+  "stock": 4,
+  "descripcion": "ventiladores setx 5 argb negros. Incliye controladora y control",
+  "IMAGEN  principal": "rose.1.webp",
+  "2 imagen": "rose.2.webp",
+  "3 imagen": "rose.3.webp"
+ },
+ {
+  "categoria": "Refrigeración",
+  "concatenado": "kit ventiladores uphere x 3 fans uphere x3 +controladora",
+  "precio": 100000,
+  "stock": 4,
+  "descripcion": "ventiladores setx 3 argb negros. Incliye controladora y control",
+  "IMAGEN  principal": "up.1.webp",
+  "2 imagen": "up.2.webp",
+  "3 imagen": "up.3.webp"
+ },
+ {
+  "categoria": "Refrigeración",
+  "concatenado": "kit ventiladores Uphere x 5 fans uphere x5 +controladora",
+  "precio": 150000,
+  "stock": 4,
+  "descripcion": "ventiladores setx  3 Iluminados",
+  "IMAGEN  principal": "up5.1.webp",
+  "2 imagen": "up5.2.webp",
+  "3 imagen": "up5.3.webp",
+  "PROMOCION": "si"
+ },
+ {
+  "categoria": "Gabinetes",
+  "concatenado": "LC-170-HEISE-L M-ATX\/ITX - C",
+  "precio": 450000,
+  "stock": 4,
+  "descripcion": "Torre versátil para M-ATX\/ITX, soporta hasta 7 ventiladores, incluye 5 ARGB preinstalados",
+  "IMAGEN  principal": "heiseblac.webp",
+  "2 imagen": "heisewhi.webp"
+ },
+ {
+  "categoria": "Monitores",
+  "concatenado": "Monitor AOC Monitor AOC 27\" 180 hz",
+  "precio": 650000,
+  "stock": 4,
+  "descripcion": "Monitor gamer pivotable, VA 180hz 27\"",
+  "IMAGEN  principal": "aoc.1.webp",
+  "2 imagen": "aoc.2.webp",
+  "3 imagen": "aoc.3.webp"
+ },
+ {
+  "categoria": "Monitores",
+  "concatenado": "Monitor KTC 24\" ktc monitor 24\" 180 hz ips",
+  "precio": 400000,
+  "stock": 4,
+  "descripcion": "Monitor gamer ips 180hz 24\"",
+  "IMAGEN  principal": "ktc.1.webp",
+  "2 imagen": "ktc.2.webp",
+  "3 imagen": "ktc.3.webp",
+  "PROMOCION": "si"
+ },
+ {
+  "categoria": "gabinetes",
+  "concatenado": "MOROVOL MATX ",
+  "precio": 400000,
+  "stock": 4,
+  "descripcion": "Gabinete compacto con vidrio templado panorámico de 270°, ideal para builds MATX",
+  "IMAGEN  principal": "morovol.webp",
+  "PROMOCION": "si"
+ },
+ {
+  "categoria": "Motherboards",
+  "concatenado": "Motherboard Asrock b550m hdv",
+  "precio": 330000,
+  "stock": 4,
+  "descripcion": "board ryzen am4 pci 4.0",
+  "IMAGEN  principal": "5503.webp",
+  "2 imagen": "5501.webp"
+ },
+ {
+  "categoria": "Motherboards",
+  "concatenado": "Motherboard MSI z690",
+  "precio": 500000,
+  "stock": 4,
+  "descripcion": "board tope de gama socket 1700, 12th-13 th-14 th",
+  "IMAGEN  principal": "z690.1.webp",
+  "2 imagen": "z690.2.webp"
+ },
+ {
+  "categoria": "GPU",
+  "concatenado": "msi 4060 ",
+  "precio": 2000000,
+  "stock": 4,
+  "descripcion": "NVIDIA GeForce RTX 4060, 8 GB GDDR6, rendimiento sólido para juegos modernos",
+  "IMAGEN  principal": "4060.webp"
+ },
+ {
+  "categoria": "GPU",
+  "concatenado": "GPU msi 5060 ",
+  "precio": 2400000,
+  "stock": 4,
+  "descripcion": "GPU de gama alta, excelente para gaming en 1440p y edición de video",
+  "IMAGEN  principal": "5060.webp"
+ },
+ {
+  "categoria": "GPU",
+  "concatenado": "GPU msi 5060 ti ",
+  "precio": 3000000,
+  "stock": 4,
+  "descripcion": "Versión mejorada con mayor potencia gráfica y eficiencia térmica",
+  "IMAGEN  principal": "5060ti.webp"
+ },
+ {
+  "categoria": "GPU",
+  "concatenado": "NVIDIA GeForce RTX 4070 MSI",
+  "precio": 3200000,
+  "stock": 4,
+  "descripcion": "12GB GDDR6X, RayTracing y DLSS 3",
+  "IMAGEN  principal": "4700_2.webp",
+  "2 imagen": "4700_3.webp",
+  "3 imagen": "4700_1.webp",
+  "PROMOCION": "si"
+ },
+ {
+  "categoria": "almacenamiento",
+  "concatenado": "NVME Fikwood 3500mbs nvme m.2 1 tb fikwot",
+  "precio": 220000,
+  "stock": 4,
+  "descripcion": "nvme pci 4.0 3500 mbs lectura. 1278",
+  "IMAGEN  principal": "nvmefi.1.webp",
+  "2 imagen": "nvmefi.2.webp",
+  "3 imagen": "nvmefi.3.webp"
+ },
+ {
+  "categoria": "CPU",
+  "concatenado": "Procesador  i5 13400F Intel",
+  "precio": 920000,
+  "stock": 4,
+  "descripcion": "6 núcleos, 12 hilos, 3.7 GHz, boost 4.2 GHz",
+  "IMAGEN  principal": "i5_13400f3.webp",
+  "2 imagen": "i5_13400f2.webp",
+  "3 imagen": "i5_13400f1.webp"
+ },
+ {
+  "categoria": "CPU",
+  "concatenado": "Procesador AMD Ryzen 5 4600G",
+  "precio": 420000,
+  "stock": 4,
+  "descripcion": "6 núcleos, 12 hilos, gráficos integrados Radeon Vega 7",
+  "IMAGEN  principal": "4600g.webp"
+ },
+ {
+  "categoria": "CPU",
+  "concatenado": "Procesador AMD Ryzen 5 5500",
+  "precio": 420000,
+  "stock": 4,
+  "descripcion": "6 núcleos, 12 hilos, sin gráficos integrados",
+  "IMAGEN  principal": "ryzen5.webp"
+ },
+ {
+  "categoria": "CPU",
+  "concatenado": "Procesador AMD Ryzen 5 5600",
+  "precio": 520000,
+  "stock": 4,
+  "descripcion": "6 núcleos, 12 hilos, alto rendimiento para gaming",
+  "IMAGEN  principal": "ryzen5.webp",
+  "PROMOCION": "si"
+ },
+ {
+  "categoria": "CPU",
+  "concatenado": "Procesador AMD Ryzen 5 7600",
+  "precio": 780000,
+  "stock": 4,
+  "descripcion": "6 núcleos, 12 hilos, arquitectura Zen 4, gráficos RDNA 2",
+  "IMAGEN  principal": "7600.webp"
+ },
+ {
+  "categoria": "CPU",
+  "concatenado": "Procesador AMD Ryzen 5 8400F",
+  "precio": 620000,
+  "stock": 4,
+  "descripcion": "6 núcleos, 12 hilos, sin gráficos, ideal para PCs con GPU dedicada",
+  "IMAGEN  principal": "8400f.webp"
+ },
+ {
+  "categoria": "CPU",
+  "concatenado": "Procesador AMD Ryzen 5 8500G",
+  "precio": 680000,
+  "stock": 4,
+  "descripcion": "6 núcleos, 12 hilos, gráficos Radeon 740M integrados",
+  "IMAGEN  principal": "8500.webp"
+ },
+ {
+  "categoria": "CPU",
+  "concatenado": "Procesador AMD Ryzen 7 5700X",
+  "precio": 720000,
+  "stock": 4,
+  "descripcion": "8 núcleos, 16 hilos, excelente para multitarea y productividad",
+  "IMAGEN  principal": "ryzen7.webp"
+ },
+ {
+  "categoria": "CPU",
+  "concatenado": "Procesador AMD Ryzen 7 5700X3D",
+  "precio": 950000,
+  "stock": 4,
+  "descripcion": "8 núcleos, 16 hilos, caché 3D para gaming avanzado",
+  "IMAGEN  principal": "ryzen7.webp"
+ },
+ {
+  "categoria": "CPU",
+  "concatenado": "Procesador AMD Ryzen 7 5800X",
+  "precio": 850000,
+  "stock": 4,
+  "descripcion": "8 núcleos, 16 hilos, alto rendimiento en tareas exigentes",
+  "IMAGEN  principal": "ryzen7.webp"
+ },
+ {
+  "categoria": "CPU",
+  "concatenado": "Procesador I5 procesador intel 12600kf",
+  "precio": 600000,
+  "stock": 4,
+  "descripcion": "6 núcleos, 12 hilos, 3.7 GHz, boost 4.2 GHz",
+  "IMAGEN  principal": "i512600kf.1.webp"
+ },
+ {
+  "categoria": "CPU",
+  "concatenado": "Procesador Intel  Core i3-14100F",
+  "precio": 420000,
+  "stock": 4,
+  "descripcion": "4 núcleos, 8 hilos, sin gráficos, ideal para PCs básicos",
+  "IMAGEN  principal": "i314.webp"
+ },
+ {
+  "categoria": "CPU",
+  "concatenado": "Procesador Intel  Core i5-12400F",
+  "precio": 580000,
+  "stock": 4,
+  "descripcion": "6 núcleos, 12 hilos, sin gráficos, buen rendimiento general",
+  "IMAGEN  principal": "i512.webp"
+ },
+ {
+  "categoria": "CPU",
+  "concatenado": "Procesador Intel  Core i5-12600KF",
+  "precio": 850000,
+  "stock": 4,
+  "descripcion": "10 núcleos (6P+4E), sin gráficos, excelente para gaming",
+  "IMAGEN  principal": "i512.webp",
+  "PROMOCION": "si"
+ },
+ {
+  "categoria": "CPU",
+  "concatenado": "Procesador Intel  Core i5-13400F",
+  "precio": 720000,
+  "stock": 4,
+  "descripcion": "10 núcleos (6P+4E), sin gráficos, rendimiento equilibrado",
+  "IMAGEN  principal": "i513.webp"
+ },
+ {
+  "categoria": "CPU",
+  "concatenado": "Procesador Intel  Core i5-13600KF",
+  "precio": 1050000,
+  "stock": 4,
+  "descripcion": "14 núcleos (6P+8E), sin gráficos, ideal para tareas exigentes",
+  "IMAGEN  principal": "i513.webp"
+ },
+ {
+  "categoria": "CPU",
+  "concatenado": "Procesador Intel  Core i5-14600KF",
+  "precio": 1050000,
+  "stock": 4,
+  "descripcion": "14 núcleos (6P+8E), sin gráficos, última generación",
+  "IMAGEN  principal": "i514.webp"
+ },
+ {
+  "categoria": "CPU",
+  "concatenado": "Procesador Intel  Core i7-12700",
+  "precio": 1150000,
+  "stock": 4,
+  "descripcion": "12 núcleos (8P+4E), con gráficos integrados UHD 770",
+  "IMAGEN  principal": "i712.webp"
+ },
+ {
+  "categoria": "CPU",
+  "concatenado": "Procesador Intel  Core i7-12700KF",
+  "precio": 1200000,
+  "stock": 4,
+  "descripcion": "12 núcleos (8P+4E), sin gráficos, alto rendimiento",
+  "IMAGEN  principal": "i712.webp"
+ },
+ {
+  "categoria": "PSU",
+  "concatenado": "Fuente esgaming 700 w fuente  700w",
+  "precio": 200000,
+  "stock": 4,
+  "descripcion": "fuente de poder certificada 80+ bronze. 700w cableada",
+  "IMAGEN  principal": "esga.1.webp",
+  "2 imagen": "esga.2.webp",
+  "3 imagen": "esga.3.webp"
+ },
+ {
+  "categoria": "PSU",
+  "concatenado": "Fuente Hovxjzk 500w fuente 500w 80+ bronze",
+  "precio": 170000,
+  "stock": 4,
+  "descripcion": "fuente de poder certificada 80+ bronze. 500w cableada",
+  "IMAGEN  principal": "hobo.1.webp",
+  "2 imagen": "hobo.2.webp",
+  "3 imagen": "hobo.3.webp"
+ },
+ {
+  "categoria": "RAM",
+  "concatenado": "Ram  ddr4 tiger data ram rgb tiger data 2x 8",
+  "precio": 170000,
+  "stock": 4,
+  "descripcion": "RAM ddr4 sp 16 gb 2x8 argb",
+  "IMAGEN  principal": "tiger.1.webp",
+  "2 imagen": "tiger.2.webp",
+  "3 imagen": "tiger.3.webp"
+ },
+ {
+  "categoria": "RAM",
+  "concatenado": "Ram ddr4 SP turbine argb ",
+  "precio": 330000,
+  "stock": 4,
+  "descripcion": "RAM ddr4 sp 32 gb argb",
+  "IMAGEN  principal": "sptur.2.webp",
+  "2 imagen": "sptur.1.webp",
+  "3 imagen": "sptur.3.webp",
+  "PROMOCION": "si"
+ },
+ {
+  "categoria": "Periféricos",
+  "concatenado": "Siyoulang controladora manual argb",
+  "precio": 30000,
+  "stock": 4,
+  "descripcion": "Controladora ARGB para boards no modernas, sin conector 3 pines 5v",
+  "IMAGEN  principal": "siyou1.webp"
+ },
+ {
+  "categoria": "GPU",
+  "concatenado": "GPU power color grafica power color 6650xt",
+  "precio": 1100000,
+  "stock": 4,
+  "descripcion": "gpu, gamer 8 gb negra 3 headpipes",
+  "IMAGEN  principal": "6650XT.webp"
+ },
+ {
+  "categoria": "Periféricos",
+  "concatenado": "Teclado 60%  Teclado mecanico oupary",
+  "precio": 100000,
+  "stock": 4,
+  "descripcion": "switche rojo, hotswaple,  Teclado negro 60%",
+  "IMAGEN  principal": "oupari.2.webp",
+  "2 imagen": "oupari.1.webp",
+  "3 imagen": "oupari.3.webp"
+ },
+ {
+  "categoria": "Periféricos",
+  "concatenado": "Teclado ractous 60% Teclado ractous inalambrico bluethooth blanco",
+  "precio": 120000,
+  "stock": 4,
+  "descripcion": "switche azul Inalambrico  Teclado blanco 60% bluethoot. ",
+  "IMAGEN  principal": "raktous.1.webp",
+  "2 imagen": "raktous.2.webp",
+  "3 imagen": "raktous.3.webp"
+ },
+ {
+  "categoria": "Periféricos",
+  "concatenado": "Teclado siyoulang Teclado felizon azul ",
+  "precio": 70000,
+  "stock": 4,
+  "descripcion": "switche azul  Teclado negro 60%",
+  "IMAGEN  principal": "siblu.3.webp",
+  "2 imagen": "siblu.2.webp",
+  "3 imagen": "siblu.1.webp"
+ },
+ {
+  "categoria": "Periféricos",
+  "concatenado": "Teclado tilted net crystal Teclado tilted gris",
+  "precio": 100000,
+  "stock": 4,
+  "descripcion": "switche brown  Teclado  gris. Teclas tipo cristal full argb ",
+  "IMAGEN  principal": "tilted.1.webp",
+  "2 imagen": "tilted.2.webp",
+  "3 imagen": "tilted.3.webp"
+ },
+ {
+  "categoria": "Periféricos",
+  "concatenado": "Teclado tilted net crystal Teclado tilted rosa",
+  "precio": 90000,
+  "stock": 4,
+  "descripcion": "switche brown  Teclado  rosa. Teclas tipo cristal full argb ",
+  "IMAGEN  principal": "tiltedr.1.webp",
+  "2 imagen": "tiltedr.2.webp",
+  "3 imagen": "tiltedr.3.webp"
+ }
+],
+"categorias":[
+ {
+  "id": 1,
+  "name": "CPU",
+  "slug": "cpu"
+ },
+ {
+  "id": 2,
+  "name": "GPU",
+  "slug": "gpu"
+ },
+ {
+  "id": 3,
+  "name": "RAM",
+  "slug": "ram"
+ },
+ {
+  "id": 4,
+  "name": "Motherboards",
+  "slug": "motherboards"
+ },
+ {
+  "id": 5,
+  "name": "Almacenamiento",
+  "slug": "almacenamiento"
+ },
+ {
+  "id": 6,
+  "name": "PSU",
+  "slug": "psu"
+ },
+ {
+  "id": 7,
+  "name": "Refrigeración",
+  "slug": "refrigeracion"
+ },
+ {
+  "id": 8,
+  "name": "Monitores",
+  "slug": "monitores"
+ },
+ {
+  "id": 9,
+  "name": "Periféricos",
+  "slug": "perifericos"
+ },
+ {
+  "id": 10,
+  "name": "Gabinetes",
+  "slug": "gabinetes"
+ },
+ {
+  "id": 11,
+  "name": "Redes",
+  "slug": "redes"
+ },
+ {
+  "id": 12,
+  "name": "Accesorios",
+  "slug": "accesorios"
+ }
+]
+}

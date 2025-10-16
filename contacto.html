@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Contacto - Yarotec</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contáctanos - Soporte y atención al cliente Yarotec">
+  <link rel="stylesheet" href="css/styles.css">
+ 
+
+  <style>
+    /* Spinner minimalista */
+    .spinner {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border: 2px solid var(--accent);
+      border-top: 2px solid transparent;
+      border-radius: 50%;
+      margin-left: 8px;
+      animation: spin 0.7s linear infinite;
+      vertical-align: middle;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+
+<body data-current="contacto">
+  <!-- ========================= -->
+  <!-- Encabezado -->
+  <!-- ========================= -->
+  <header>
+    <div class="container topbar">
+      <div class="brand">
+        <img src="img/Simbolo.png" alt="Símbolo Yarotec" class="symbol">
+      </div>
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="contacto.html" class="active">Contacto</a>
+        <a href="carrito.html" id="cart-link">🛒 Carrito <span id="cart-count">0</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========================= -->
+  <!-- Contenido principal -->
+  <!-- ========================= -->
+  <main class="container">
+    <h1 style="text-align:center;margin-bottom:20px;">Contáctanos</h1>
+    <p style="text-align:center;color:var(--muted);margin-bottom:40px;">
+      Envíanos un mensaje y te responderemos lo antes posible.
+    </p>
+
+    <form id="contact-form" class="checkout-form" style="max-width:800px;margin:auto;">
+      <input type="text" name="nombre" placeholder="Tu nombre completo" required>
+      <input type="email" name="correo" placeholder="Correo electrónico" required>
+      <input type="text" name="telefono" placeholder="Teléfono o celular" required>
+
+      <div class="full">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje..." maxlength="400" required></textarea>
+        <div id="char-count" style="text-align:right;font-size:13px;color:var(--muted);margin-top:4px;">0 / 400 caracteres</div>
+      </div>
+
+      <div class="full" style="text-align:center;margin-top:20px;">
+        <button type="submit" class="btn" id="submit-btn">Enviar mensaje</button>
+      </div>
+    </form>
+  </main>
+
+  <footer>
+    <div class="container">© 2025 Yarotec - Servicios técnicos de confianza</div>
+  </footer>
+
+  <!-- ========================= -->
+<!-- SCRIPTS -->
+<!-- ========================= -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="js/emailService.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/app.js"></script>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // --- Contador de caracteres ---
+      const mensaje = document.getElementById('mensaje');
+      const counter = document.getElementById('char-count');
+      const maxChars = 400;
+
+      mensaje.addEventListener('input', () => {
+        counter.textContent = `${mensaje.value.length} / ${maxChars} caracteres`;
+        counter.style.color = mensaje.value.length > maxChars * 0.9 ? 'var(--accent)' : 'var(--muted)';
+      });
+
+      // --- Envío con animación ---
+      const form = document.getElementById("contact-form");
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const data = Object.fromEntries(new FormData(form).entries());
+        const btn = document.getElementById("submit-btn");
+        const originalText = btn.textContent;
+
+        // Mostrar animación de carga
+        btn.innerHTML = `${originalText} <span class="spinner"></span>`;
+        btn.disabled = true;
+
+        try {
+          const result = await window.emailService.sendContactMessage(data);
+          if (result.success) {
+            alert("✅ Mensaje enviado correctamente. Te responderemos pronto.");
+            form.reset();
+            counter.textContent = "0 / 400 caracteres";
+          } else {
+            alert("❌ Error al enviar el mensaje. Intenta nuevamente.");
+          }
+        } catch {
+          alert("❌ Ocurrió un error al enviar. Intenta más tarde.");
+        } finally {
+          btn.innerHTML = originalText;
+          btn.disabled = false;
+        }
+      });
+    });
+
+   
+  </script>
+</body>
+</html>

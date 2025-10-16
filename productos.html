@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Productos - Yarotec</title>
+  <meta name="description" content="Catálogo de productos Yarotec" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body data-current="productos">
+  <!-- ========================= -->
+  <!-- Encabezado -->
+  <!-- ========================= -->
+  <header>
+    <div class="container topbar">
+      <div class="brand">
+        <img src="img/Simbolo.png" class="symbol" alt="Simbolo Yarotec" />
+      </div>
+
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="productos.html" class="active">Productos</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="carrito.html" id="cart-link">🛒 Carrito <span id="cart-count">0</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========================= -->
+  <!-- Contenido principal -->
+  <!-- ========================= -->
+  <main class="container">
+    <section class="filters">
+      <input type="text" id="search-input" placeholder="Buscar productos..." />
+      <select id="category-filter">
+        <option value="">Todas las categorías</option>
+      </select>
+      <select id="sort-filter">
+        <option value="">Ordenar...</option>
+        <option value="precio-asc">Precio: Menor a Mayor</option>
+        <option value="precio-desc">Precio: Mayor a Menor</option>
+        <option value="nombre-asc">Nombre: A-Z</option>
+        <option value="nombre-desc">Nombre: Z-A</option>
+      </select>
+    </section>
+
+    <section id="products-grid" class="grid"></section>
+    <div id="pagination" class="pagination"></div>
+  </main>
+
+  <!-- ========================= -->
+  <!-- Modal de producto -->
+  <!-- ========================= -->
+  <div class="modal" id="product-modal" aria-hidden="true">
+    <div class="dialog">
+      <div class="grid">
+        <div class="gallery" id="modal-gallery" style="min-height:320px; overflow-x:auto; display:flex; gap:10px;"></div>
+        <div class="dlg-body">
+          <h3 id="modal-title"></h3>
+          <p id="modal-desc" style="color:var(--muted)"></p>
+          <p><strong>Precio:</strong> <span id="modal-price" class="price"></span></p>
+          <p><strong>Stock disponible:</strong> <span id="modal-stock"></span></p>
+
+          <div style="display:flex;gap:8px;margin-top:12px">
+            <input type="number" id="modal-qty" min="1" value="1" style="width:90px;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)" />
+            <button class="btn" id="add-to-cart">Agregar al carrito</button>
+            <button class="btn ghost" id="close-modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================= -->
+  <!-- Scripts -->
+  <!-- ========================= -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="data/products-loader.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/emailService.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/products-page.js"></script>
+</body>
+</html>

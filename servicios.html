@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Servicios - Yarotec</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Solicita servicios técnicos y mantenimiento con Yarotec" />
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body data-current="servicios">
+  <header>
+    <div class="container topbar">
+      <div class="brand">
+        <img src="img/Simbolo.png" class="symbol" alt="Simbolo Yarotec" />
+      </div>
+
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="servicios.html" class="active">Servicios</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="carrito.html" id="cart-link">🛒 Carrito <span id="cart-count">0</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 style="text-align:center;margin-bottom:20px;">Solicita un servicio técnico</h1>
+    <p style="text-align:center;color:var(--muted);margin-bottom:40px;">
+      Selecciona el servicio que requieres y cuéntanos brevemente qué necesitas.
+    </p>
+
+    <form id="service-form" class="checkout-form" style="max-width:800px;margin:auto;">
+      <div class="full">
+        <label for="servicio">Servicio requerido</label>
+        <select id="servicio" name="servicio" required>
+          <option value="">-- Selecciona un servicio --</option>
+          <option value="Limpieza de computadores">Limpieza de computadores</option>
+          <option value="Instalación de hardware">Instalación de hardware</option>
+          <option value="Formateo de equipos">Formateo de equipos</option>
+          <option value="Actualización de software">Actualización de software</option>
+        </select>
+      </div>
+
+      <div class="full">
+        <label for="descripcion">Descripción del servicio</label>
+        <textarea id="descripcion" name="descripcion" placeholder="Describe brevemente lo que necesitas..." required></textarea>
+        <div id="word-count" style="text-align:right;font-size:13px;color:var(--muted);margin-top:4px;">0 / 50 palabras</div>
+      </div>
+
+      <input type="text" name="nombre" placeholder="Tu nombre completo" required>
+      <input type="email" name="correo" placeholder="Correo electrónico" required>
+      <input type="text" name="telefono" placeholder="Teléfono o celular" required>
+      <input type="text" name="direccion" placeholder="Dirección" required>
+      <input type="text" name="localidad" placeholder="Localidad o barrio" required>
+
+      <div class="full" style="text-align:center;margin-top:20px;">
+        <button type="submit" class="btn">Enviar solicitud</button>
+      </div>
+    </form>
+  </main>
+
+  <footer>
+    <div class="container">© 2025 Yarotec - Servicios técnicos de confianza</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="js/emailService.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/app.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("service-form");
+      const textarea = document.getElementById("descripcion");
+      const counter = document.getElementById("word-count");
+      const maxWords = 50;
+
+      // --- Contador de palabras ---
+      textarea.addEventListener("input", () => {
+        const words = textarea.value.trim().split(/\s+/).filter(Boolean);
+        const count = words.length;
+        if (count > maxWords) {
+          textarea.value = words.slice(0, maxWords).join(" ");
+        }
+        counter.textContent = `${Math.min(count, maxWords)} / ${maxWords} palabras`;
+        counter.style.color = count > maxWords * 0.9 ? 'var(--accent)' : 'var(--muted)';
+      });
+
+      // --- Envío del formulario ---
+      let isSending = false;
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        if (isSending) return;
+        isSending = true;
+
+        const data = Object.fromEntries(new FormData(form).entries());
+        const btn = form.querySelector("button");
+        const original = btn.textContent;
+        btn.textContent = "Enviando...";
+        btn.disabled = true;
+
+        try {
+          const result = await window.emailService.sendServiceRequest(data);
+          if (result.success) {
+            alert("✅ Solicitud enviada correctamente. Nos comunicaremos pronto.");
+            form.reset();
+            counter.textContent = `0 / ${maxWords} palabras`;
+            counter.style.color = 'var(--muted)';
+          } else {
+            alert("❌ Error al enviar la solicitud. Intenta nuevamente.");
+          }
+        } catch (error) {
+          console.error("❌ Error inesperado:", error);
+          alert("❌ Ocurrió un error al enviar. Intenta más tarde.");
+        } finally {
+          btn.textContent = original;
+          btn.disabled = false;
+          isSending = false;
+        }
+      });
+    });
+   
+
+  </script>
+</body>
+</html>

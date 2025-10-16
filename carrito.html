@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrito - Yarotec</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .form-wrapper {
+      max-width: 640px;
+      margin: 60px auto;
+      background: var(--panel);
+      padding: 32px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+    }
+    .checkout-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 12px;
+    }
+    .form-group {
+      display: flex;
+      gap: 12px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      flex: 1;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: transparent;
+      color: var(--text);
+    }
+    .form-group.full {
+      flex-direction: column;
+    }
+  </style>
+</head>
+
+<body data-current="cart">
+  <header>
+    <div class="container topbar">
+      <div class="brand">
+        <img src="img/Simbolo.png" class="symbol" alt="Simbolo Yarotec" />
+      </div>
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="carrito.html" class="active">🛒Carrito <span id="cart-badge">0</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 style="margin-top:30px;">🛍️ Tu carrito</h1>
+    <p style="color:var(--muted)">Revisa tus productos antes de diligenciar tu pedido.</p>
+
+    <div id="cart-page-items" style="margin-top:20px;"></div>
+
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:30px;">
+      <strong>Total:</strong>
+      <div id="cart-page-total" style="font-weight:800;font-size:1.3rem;">$0</div>
+    </div>
+
+    <div style="margin-top:30px;display:flex;gap:10px;justify-content:flex-end;">
+      <a href="productos.html" class="btn ghost">← Seguir explorando productos</a>
+      <button id="clear-cart" class="btn ghost">Vaciar carrito</button>
+      <button id="scroll-to-form" class="btn primary" type="button">Finalizar y diligenciar pedido</button>
+
+    </div>
+
+    <!-- FORMULARIO DE PEDIDO -->
+    <section id="pedido-formulario">
+      <div class="form-wrapper">
+        <h2 style="margin-bottom:8px;">📝 Datos para tu pedido</h2>
+        <p style="color:var(--muted);margin-bottom:20px;">Completa tus datos para enviar el pedido por correo.</p>
+
+        <form id="checkout-form">
+          <div class="checkout-grid">
+            <div class="form-group">
+              <input name="nombre" placeholder="Nombre completo" required />
+              <input name="cedula" placeholder="Cédula o NIT" required />
+            </div>
+            <div class="form-group">
+              <input name="correo" type="email" placeholder="Correo electrónico" required />
+              <input name="telefono" placeholder="Teléfono" required />
+            </div>
+            <div class="form-group">
+              <input name="ciudad" placeholder="Ciudad" required />
+              <input name="direccion" placeholder="Dirección completa" required />
+            </div>
+            <div class="form-group full">
+              <select name="metodo_pago" required>
+                <option value="">Seleccionar método de pago</option>
+                <option value="nequi">Nequi / Daviplata (3108091203)</option>
+                <option value="contra_entrega">Contra entrega - Aplican cargos</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <textarea name="nota" placeholder="Nota adicional (opcional)" rows="3"></textarea>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:20px;">
+            <button type="submit" class="btn primary">📦 Enviar pedido</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="js/emailService.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/app.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const container = document.getElementById("cart-page-items");
+      const total = document.getElementById("cart-page-total");
+      const clearCartBtn = document.getElementById("clear-cart");
+      const scrollToFormBtn = document.getElementById("scroll-to-form");
+      const checkoutForm = document.getElementById("checkout-form");
+
+      function renderCartPage() {
+        const cart = window.cartManager.getCart();
+        container.innerHTML = "";
+
+        if (cart.length === 0) {
+          container.innerHTML = "<p style='color:var(--muted);padding:20px;'>No hay productos en el carrito.</p>";
+          total.textContent = "$0";
+          return;
+        }
+
+        cart.forEach(item => {
+          const div = document.createElement("div");
+          div.className = "cart-item";
+          div.style.cssText = "display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.1);";
+
+          div.innerHTML = `
+            <div>
+              <div style="font-weight:600">${item.nombre}</div>
+              <div style="color:var(--muted);font-size:13px;margin-top:4px;">
+                ${window.cartManager.formatCOP(item.precio)} x ${item.qty}
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div style="font-weight:700">${window.cartManager.formatCOP(item.precio * item.qty)}</div>
+              <button class="btn ghost btn-remove" data-id="${item.id}" style="padding:4px 10px;font-size:13px;">🗑️</button>
+            </div>
+          `;
+          container.appendChild(div);
+        });
+
+        total.textContent = window.cartManager.formatCOP(window.cartManager.getTotal());
+      }
+
+      container.addEventListener("click", (e) => {
+        if (e.target.classList.contains("btn-remove")) {
+          const id = e.target.getAttribute("data-id");
+          window.cartManager.removeItem(id);
+          renderCartPage();
+          window.cartManager.syncUI();
+        }
+      });
+
+      clearCartBtn.addEventListener("click", () => {
+        if (confirm("¿Estás seguro de vaciar el carrito?")) {
+          window.cartManager.clear();
+          renderCartPage();
+          window.cartManager.syncUI();
+        }
+      });
+
+      scrollToFormBtn.addEventListener("click", () => {
+        const section = document.getElementById("pedido-formulario");
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+
+            scrollToFormBtn.addEventListener("click", () => {
+        const section = document.getElementById("pedido-formulario");
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+
+      let isSending = false;
+
+      checkoutForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        if (isSending) return;
+        isSending = true;
+
+        const data = Object.fromEntries(new FormData(checkoutForm).entries());
+        const btn = checkoutForm.querySelector("button[type='submit']");
+        btn.textContent = "Enviando...";
+        btn.disabled = true;
+
+        const result = await window.emailService.sendOrder(data);
+
+        if (result.success) {
+          alert("✅ Pedido enviado correctamente. Te contactaremos pronto.");
+          window.cartManager.clear();
+          renderCartPage();
+          checkoutForm.reset();
+        } else {
+          alert("❌ " + result.error);
+        }
+
+        btn.textContent = "📦 Enviar pedido";
+        btn.disabled = false;
+        isSending = false;
+      });
+
+      renderCartPage();
+      window.cartManager.syncUI();
+
+      
+    });
+
+   
+  </script>
+</body>
+</html>

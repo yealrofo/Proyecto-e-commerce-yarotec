@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yarotec - Inicio</title>
+  <meta name="description" content="Yarotec - Hardware, ensamble y servicios de mantenimiento" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body data-current="home">
+  <!-- ========================= -->
+  <!-- Encabezado -->
+  <!-- ========================= -->
+  <header>
+    <div class="container topbar">
+      <div class="brand">
+        <img src="img/Simbolo.png" class="symbol" alt="Simbolo Yarotec" />
+      </div>
+
+      <nav>
+        <a href="index.html" class="active">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="carrito.html" id="cart-link">🛒 Carrito <span id="cart-count">0</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========================= -->
+  <!-- Contenido principal -->
+  <!-- ========================= -->
+  <main>
+    <div class="container">
+      <section class="hero">
+        <div class="intro">
+          <h1>Bienvenido a Yarotec</h1>
+          <p>Venta de hardware, ensamble y servicios de mantenimiento. Productos reales en stock y ofertas destacadas en la página principal.</p>
+          <p style="margin-top:12px;color:var(--muted)">Elija un producto para ver más detalles, fotos adicionales y agregar al carrito.</p>
+        </div>
+
+        <div class="video-wrap" style="display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg, rgba(29,182,169,0.1) 0%, rgba(15,17,20,0.8) 100%);border:1px solid rgba(29,182,169,0.2);cursor:pointer" onclick="window.open('https://youtu.be/PZSSqVXG40s', '_blank')">
+          <div style="text-align:center;padding:40px 20px;">
+            <iframe id="channel-video" src="https://www.youtube.com/embed/PZSSqVXG40s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 style="margin:6px 0 12px">Promociones</h2>
+        <div class="promos" id="promos-grid">
+          <!-- Tarjetas generadas por JS -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ========================= -->
+  <!-- Modal de producto -->
+  <!-- ========================= -->
+  <div class="modal" id="product-modal" aria-hidden="true">
+    <div class="dialog">
+      <div class="grid">
+        <div class="gallery" id="modal-gallery" style="min-height:320px"></div>
+        <div class="dlg-body">
+          <h3 id="modal-title"></h3>
+          <p id="modal-desc" style="color:var(--muted)"></p>
+          <p><strong>Precio:</strong> <span id="modal-price" class="price"></span></p>
+          <p><strong>Stock disponible:</strong> <span id="modal-stock"></span></p>
+
+          <div style="display:flex;gap:8px;margin-top:12px">
+            <input type="number" id="modal-qty" min="1" value="1" style="width:90px;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)" />
+            <button class="btn" id="add-to-cart">Agregar al carrito</button>
+            <button class="btn ghost" id="close-modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================= -->
+  <!-- Sección de Servicios -->
+  <!-- ========================= -->
+  <section id="servicios" style="padding: 60px 0; background: var(--panel); margin-top: 40px;">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 40px; font-size: 2rem;">Nuestros Servicios</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+        <div style="background: var(--glass); padding: 30px; border-radius: var(--card-radius); text-align: center;">
+          <div style="font-size: 3rem; margin-bottom: 20px;">🛠️</div>
+          <h3 style="margin: 0 0 15px 0;">Ensamble de PCs</h3>
+          <p style="color: var(--muted); margin: 0;">
+            Ensamblamos tu PC personalizado con los mejores componentes del mercado, optimizado para tus necesidades específicas.
+          </p>
+        </div>
+
+        <div style="background: var(--glass); padding: 30px; border-radius: var(--card-radius); text-align: center;">
+          <div style="font-size: 3rem; margin-bottom: 20px;">🔧</div>
+          <h3 style="margin: 0 0 15px 0;">Mantenimiento</h3>
+          <p style="color: var(--muted); margin: 0;">
+            Servicio técnico especializado: limpieza, actualizaciones, diagnóstico y reparación de equipos.
+          </p>
+        </div>
+
+        <div style="background: var(--glass); padding: 30px; border-radius: var(--card-radius); text-align: center;">
+          <div style="font-size: 3rem; margin-bottom: 20px;">🎮</div>
+          <h3 style="margin: 0 0 15px 0;">Optimización Gaming</h3>
+          <p style="color: var(--muted); margin: 0;">
+            Optimizamos tu setup gaming para máximo rendimiento: overclocking, configuración y testing.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!-- Sección de Contacto -->
+  <!-- ========================= -->
+  <section id="contacto" style="padding: 60px 0;">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 40px; font-size: 2rem;">Contacto</h2>
+
+      <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+        <div style="background: var(--glass); padding: 30px; border-radius: var(--card-radius);">
+          <h3 style="margin: 0 0 20px 0;">📞 Contáctanos</h3>
+          <p style="color: var(--muted); margin: 0 0 20px 0;">
+            ¿Tienes dudas o necesitas asesoría personalizada? Estamos aquí para ayudarte.
+          </p>
+
+          <div style="display: grid; gap: 15px; text-align: left;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span style="font-size: 1.2rem;">📱</span>
+              <span><strong>WhatsApp:</strong> 310 809 1203</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span style="font-size: 1.2rem;">📧</span>
+              <span><strong>Email:</strong> yarochaf@gmail.com</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span style="font-size: 1.2rem;">🕒</span>
+              <span><strong>Horario:</strong> Lunes a Sábado 9am - 6pm</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!-- Pie de página -->
+  <!-- ========================= -->
+  <footer>
+    <div class="container">© Yarotec - Todos los derechos reservados</div>
+  </footer>
+
+  <!-- ========================= -->
+  <!-- Scripts -->
+  <!-- ========================= -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="data/products-loader.js"></script>  
+  <script src="js/products.js"></script>           
+  <script src="js/cart.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/emailService.js"></script>
+  <script src="js/app.js"></script>               
+</body>
+</html>
