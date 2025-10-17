@@ -5,48 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Carrito - Yarotec</title>
   <link rel="stylesheet" href="css/styles.css" />
-  <style>
-    .form-wrapper {
-      max-width: 640px;
-      margin: 60px auto;
-      background: var(--panel);
-      padding: 32px;
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-    }
-    .checkout-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-top: 12px;
-    }
-    .form-group {
-      display: flex;
-      gap: 12px;
-    }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      flex: 1;
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: transparent;
-      color: var(--text);
-    }
-    .form-group.full {
-      flex-direction: column;
-    }
-  </style>
 </head>
 
 <body data-current="cart">
+  <!-- ========================= -->
+  <!-- Header responsivo -->
+  <!-- ========================= -->
   <header>
     <div class="container topbar">
       <div class="brand">
         <img src="img/Simbolo.png" class="symbol" alt="Simbolo Yarotec" />
       </div>
-      <nav>
+
+      <!-- Botón menú móvil -->
+      <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+
+      <nav class="nav-links">
         <a href="index.html">Inicio</a>
         <a href="productos.html">Productos</a>
         <a href="servicios.html">Servicios</a>
@@ -56,6 +30,9 @@
     </div>
   </header>
 
+  <!-- ========================= -->
+  <!-- Contenido original intacto -->
+  <!-- ========================= -->
   <main class="container">
     <h1 style="margin-top:30px;">🛍️ Tu carrito</h1>
     <p style="color:var(--muted)">Revisa tus productos antes de diligenciar tu pedido.</p>
@@ -71,7 +48,6 @@
       <a href="productos.html" class="btn ghost">← Seguir explorando productos</a>
       <button id="clear-cart" class="btn ghost">Vaciar carrito</button>
       <button id="scroll-to-form" class="btn primary" type="button">Finalizar y diligenciar pedido</button>
-
     </div>
 
     <!-- FORMULARIO DE PEDIDO -->
@@ -114,6 +90,9 @@
     </section>
   </main>
 
+  <!-- ========================= -->
+  <!-- Scripts originales -->
+  <!-- ========================= -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="js/emailService.js"></script>
   <script src="js/products.js"></script>
@@ -121,6 +100,20 @@
   <script src="js/modal.js"></script>
   <script src="js/app.js"></script>
 
+  <!-- ========================= -->
+  <!-- Script del menú responsivo -->
+  <!-- ========================= -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector(".nav-links");
+      toggle.addEventListener("click", () => nav.classList.toggle("show"));
+    });
+  </script>
+
+  <!-- ========================= -->
+  <!-- Script  carrito -->
+  <!-- ========================= -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const container = document.getElementById("cart-page-items");
@@ -181,16 +174,7 @@
 
       scrollToFormBtn.addEventListener("click", () => {
         const section = document.getElementById("pedido-formulario");
-        if (section) {
-          section.scrollIntoView({ behavior: "smooth" });
-        }
-      });
-
-            scrollToFormBtn.addEventListener("click", () => {
-        const section = document.getElementById("pedido-formulario");
-        if (section) {
-          section.scrollIntoView({ behavior: "smooth" });
-        }
+        if (section) section.scrollIntoView({ behavior: "smooth" });
       });
 
       let isSending = false;
@@ -223,11 +207,7 @@
 
       renderCartPage();
       window.cartManager.syncUI();
-
-      
     });
-
-   
   </script>
 </body>
 </html>

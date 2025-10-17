@@ -728,5 +728,174 @@ footer {
   }
 }
 
+/* ==================== MENÚ MÓVIL ==================== */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.menu-toggle span {
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  margin: 3px 0;
+  transition: all 0.3s ease;
+}
+
+/* Estado activo (X) */
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+/* NAV desplegable */
+nav.mobile {
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background: rgba(15, 17, 20, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+}
+
+nav.mobile a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+nav.mobile a:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Mostrar en móviles */
+@media (max-width: 560px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav.desktop {
+    display: none;
+  }
+}
+
+/* ===============================
+   SECCIÓN CARRITO (carrito.html)
+   =============================== */
+.form-wrapper {
+  max-width: 640px;
+  margin: 60px auto;
+  background: var(--panel);
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.checkout-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.form-group {
+  display: flex;
+  gap: 12px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: transparent;
+  color: var(--text);
+}
+
+.form-group.full {
+  flex-direction: column;
+}
+
+/* RESPONSIVE ajustes formulario */
+@media (max-width: 600px) {
+  .form-wrapper {
+    margin: 30px 16px;
+    padding: 20px;
+  }
+
+  .form-group {
+    flex-direction: column;
+  }
+
+  .btn.primary,
+  .btn.ghost {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ==== HEADER RESPONSIVO ==== */
+.menu-toggle {
+  display: none;
+  font-size: 1.6rem;
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  header .topbar {
+    flex-wrap: wrap;
+  }
+
+  nav.nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background: var(--panel);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 10px;
+  }
+
+  nav.nav-links.show {
+    display: flex;
+  }
+
+  nav.nav-links a {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+}
+
+
 
 

@@ -10,7 +10,7 @@
 
 <body data-current="home">
   <!-- ========================= -->
-  <!-- Encabezado -->
+  <!-- Encabezado responsivo -->
   <!-- ========================= -->
   <header>
     <div class="container topbar">
@@ -18,7 +18,10 @@
         <img src="img/Simbolo.png" class="symbol" alt="Simbolo Yarotec" />
       </div>
 
-      <nav>
+      <!-- Botón menú móvil -->
+      <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+
+      <nav class="nav-links">
         <a href="index.html" class="active">Inicio</a>
         <a href="productos.html">Productos</a>
         <a href="servicios.html">Servicios</a>
@@ -27,6 +30,18 @@
       </nav>
     </div>
   </header>
+
+  <script>
+    // Script mínimo para menú responsivo
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector(".nav-links");
+      toggle.addEventListener("click", () => {
+        nav.classList.toggle("show");
+      });
+    });
+  </script>
+
 
   <!-- ========================= -->
   <!-- Contenido principal -->
@@ -164,5 +179,17 @@
   <script src="js/modal.js"></script>
   <script src="js/emailService.js"></script>
   <script src="js/app.js"></script>               
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector(".nav-links");
+      toggle.addEventListener("click", () => {
+        nav.classList.toggle("show");
+      });
+    });
+  </script>
 </body>
 </html>
+
+

@@ -9,13 +9,19 @@
 </head>
 
 <body data-current="servicios">
+  <!-- ========================= -->
+  <!-- Encabezado responsivo -->
+  <!-- ========================= -->
   <header>
     <div class="container topbar">
       <div class="brand">
         <img src="img/Simbolo.png" class="symbol" alt="Simbolo Yarotec" />
       </div>
 
-      <nav>
+      <!-- Botón menú móvil -->
+      <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+
+      <nav class="nav-links">
         <a href="index.html">Inicio</a>
         <a href="productos.html">Productos</a>
         <a href="servicios.html" class="active">Servicios</a>
@@ -123,7 +129,18 @@
       });
     });
    
-
+  </script>
+<!-- ========================= -->
+  <!-- Script del menú responsivo -->
+  <!-- ========================= -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector(".nav-links");
+      toggle.addEventListener("click", () => {
+        nav.classList.toggle("show");
+      });
+    });
   </script>
 </body>
 </html>
