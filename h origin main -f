@@ -1,0 +1,35 @@
+[33mcommit 68dc1ae4792479f3ccc1c651fa642715b93dd299[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: yealrofo <yarochaf@gmail.com>
+Date:   Tue Oct 21 07:25:59 2025 -0500
+
+    corrigiendo todos los fallos :(
+
+[33mcommit 49c3a43c06d96048c57caf85261bcce184e46419[m
+Author: yealrofo <yarochaf@gmail.com>
+Date:   Tue Oct 21 06:49:17 2025 -0500
+
+    Forzar nuevo deploy desde root
+
+[33mcommit 761b9332bd15d7d46f5eca66f739d130dc135f96[m
+Author: yealrofo <yarochaf@gmail.com>
+Date:   Tue Oct 21 06:35:41 2025 -0500
+
+    Force redeploy
+
+[33mcommit f69d8c58c498ef440825e9b485a5edee7cb7c572[m
+Author: yealrofo <yarochaf@gmail.com>
+Date:   Tue Oct 21 06:34:33 2025 -0500
+
+    Force redeploy
+
+[33mcommit da2a924a538b8049253b90bd5bd46891420350cf[m
+Author: yealrofo <yarochaf@gmail.com>
+Date:   Tue Oct 21 06:33:43 2025 -0500
+
+    Fix productos, loader y modal para GitHub Pages
+
+[33mcommit cfe2b197848418621c2755612b754c49a9cd3560[m[33m ([m[1;31morigin/nombre-de-la-rama[m[33m, [m[1;31morigin/gh-pages[m[33m, [m[1;32mnombre-de-la-rama[m[33m)[m
+Author: yealrofo <yarochaf@gmail.com>
+Date:   Wed Oct 15 23:05:41 2025 -0500
+
+    Initial commit - Yarotec site
