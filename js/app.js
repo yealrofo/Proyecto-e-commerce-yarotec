@@ -125,15 +125,56 @@ class YarotecApp {
       });
     });
 
-    const checkoutForm = document.getElementById('checkout-form');
-if (checkoutForm && !checkoutForm.dataset.bound) {
-  checkoutForm.dataset.bound = "true"; // evita múltiples bindings
-  checkoutForm.addEventListener('submit', async (e) => {
-    e.stopImmediatePropagation(); // detiene listeners duplicados
-    await this.handleCheckout(e);
-  });
-}
+    // 🍔 Configurar menú hamburguesa
+    this.setupMobileMenu();
 
+    const checkoutForm = document.getElementById('checkout-form');
+    if (checkoutForm && !checkoutForm.dataset.bound) {
+      checkoutForm.dataset.bound = "true"; // evita múltiples bindings
+      checkoutForm.addEventListener('submit', async (e) => {
+        e.stopImmediatePropagation(); // detiene listeners duplicados
+        await this.handleCheckout(e);
+      });
+    }
+  }
+
+  setupMobileMenu() {
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    const closeMobile = document.getElementById('close-mobile');
+
+    if (hamburgerBtn && mobileNav) {
+      hamburgerBtn.addEventListener('click', () => {
+        mobileNav.classList.add('active');
+        hamburgerBtn.classList.add('active');
+      });
+
+      closeMobile.addEventListener('click', () => {
+        mobileNav.classList.remove('active');
+        hamburgerBtn.classList.remove('active');
+      });
+
+      // Cerrar al hacer click en un enlace
+      mobileNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileNav.classList.remove('active');
+          hamburgerBtn.classList.remove('active');
+        });
+      });
+
+      // Sincronizar contador del carrito en menú móvil
+      this.syncMobileCart();
+    }
+  }
+
+  syncMobileCart() {
+    // Sincronizar el contador del carrito en el menú móvil
+    if (window.cartManager) {
+      const mobileCartCount = document.getElementById('mobile-cart-count');
+      if (mobileCartCount) {
+        mobileCartCount.textContent = window.cartManager.getCount();
+      }
+    }
   }
 
   scrollToSection(sectionId) {
@@ -154,7 +195,7 @@ if (checkoutForm && !checkoutForm.dataset.bound) {
       return;
     }
 
-        const submitBtn = form.querySelector('button[type="submit"]');
+    const submitBtn = form.querySelector('button[type="submit"]');
     const originalText = submitBtn.textContent;
     submitBtn.textContent = 'Enviando...';
     submitBtn.disabled = true;
@@ -166,6 +207,7 @@ if (checkoutForm && !checkoutForm.dataset.bound) {
       window.cartManager.clearCart();
       window.modalManager?.closeAllModals?.();
       form.reset();
+      this.syncMobileCart(); // Actualizar contador en menú móvil
     } else {
       const msg = result?.error || 'Error al enviar el pedido. Intenta nuevamente.';
       alert('❌ ' + msg);
@@ -173,7 +215,6 @@ if (checkoutForm && !checkoutForm.dataset.bound) {
 
     submitBtn.textContent = originalText;
     submitBtn.disabled = false;
-
   }
 }
 
