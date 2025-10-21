@@ -5,15 +5,21 @@ document.addEventListener("DOMContentLoaded", async () => {
   const sortFilter = document.getElementById("sort-filter");
   const pagination = document.getElementById("pagination");
 
+  // ✅ Seguridad: si no estoy en productos.html → salir sin error
+  if (!grid || !searchInput || !categoryFilter || !sortFilter || !pagination) {
+    console.warn("⏭️ Página sin grid de productos, se omite products-page.js");
+    return;
+  }
+
   const ITEMS_PER_PAGE = 12;
   let currentPage = 1;
   let filteredProducts = [];
 
-  // Cargar productos
+  // ✅ Cargar productos
   await window.productManager.loadProducts();
   const allProducts = window.productManager.products;
 
-  // Poblar categorías (normalizadas)
+  // ✅ Poblar categorías
   const categorias = [
     ...new Set(
       allProducts
@@ -29,7 +35,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     categoryFilter.appendChild(option);
   });
 
-  // Función para aplicar filtros
+  // ✅ Filtros
   function applyFilters() {
     const searchTerm = searchInput.value.toLowerCase();
     const selectedCategory = (categoryFilter.value || '').trim().toUpperCase();
@@ -44,7 +50,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       return matchesSearch && matchesCategory;
     });
 
-    // Ordenar
+    // 🔽 Ordenamiento
     if (sortValue === "precio-asc") filteredProducts.sort((a, b) => a.precio - b.precio);
     if (sortValue === "precio-desc") filteredProducts.sort((a, b) => b.precio - a.precio);
     if (sortValue === "nombre-asc") filteredProducts.sort((a, b) => a.nombre.localeCompare(b.nombre));
@@ -54,7 +60,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     renderProducts();
   }
 
-  // Renderizar productos con paginación
+  // ✅ Render con paginación
   function renderProducts() {
     grid.innerHTML = "";
     const start = (currentPage - 1) * ITEMS_PER_PAGE;
@@ -66,7 +72,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       card.className = "card";
       card.innerHTML = `
         <div class="imgwrap">
-          <img src="img/${product.imagen_principal}" alt="${product.nombre}" 
+          <img src="img/${product.imagen_principal}" alt="${product.nombre}"
                onerror="this.src='img/placeholder.png'">
         </div>
         <div class="card-body">
@@ -81,22 +87,22 @@ document.addEventListener("DOMContentLoaded", async () => {
       `;
       grid.appendChild(card);
 
-      // === Vincular eventos a los botones dentro de la tarjeta ===
+      // ✅ Esperar modal en GitHub Pages (carga lenta)
       const viewBtn = card.querySelector('[data-action="view"]');
-      const addBtn = card.querySelector('[data-action="add"]');
-
       if (viewBtn) {
-        viewBtn.addEventListener("click", () => {
+        viewBtn.addEventListener("click", async () => {
+          while (!window.modalManager) {
+            await new Promise(r => setTimeout(r, 50));
+          }
           window.modalManager.openProductModal(product.id);
         });
       }
-
-        });
+    });
 
     renderPagination();
   }
 
-  // Renderizar paginación
+  // ✅ Paginación
   function renderPagination() {
     pagination.innerHTML = "";
     const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
@@ -113,12 +119,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   }
 
-  // Eventos
+  // ✅ Eventos
   searchInput.addEventListener("input", applyFilters);
   categoryFilter.addEventListener("change", applyFilters);
   sortFilter.addEventListener("change", applyFilters);
 
-  // Inicial
+  // ✅ Inicial
   filteredProducts = allProducts;
   renderProducts();
 });
