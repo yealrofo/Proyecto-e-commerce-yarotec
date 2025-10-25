@@ -137,36 +137,38 @@ class YarotecApp {
       });
     }
   }
+setupMobileMenu() {
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const mobileNav = document.getElementById('mobile-nav');
+  const closeMobile = document.getElementById('close-mobile');
 
-  setupMobileMenu() {
-    const hamburgerBtn = document.getElementById('hamburger-btn');
-    const mobileNav = document.getElementById('mobile-nav');
-    const closeMobile = document.getElementById('close-mobile');
+  if (hamburgerBtn && mobileNav) {
+    hamburgerBtn.addEventListener('click', () => {
+      mobileNav.classList.add('active');
+      hamburgerBtn.classList.add('active');
+    });
 
-    if (hamburgerBtn && mobileNav) {
-      hamburgerBtn.addEventListener('click', () => {
-        mobileNav.classList.add('active');
-        hamburgerBtn.classList.add('active');
-      });
-
+    // ✅ SOLUCIÓN: Verificar si closeMobile existe antes de agregar event listener
+    if (closeMobile) {
       closeMobile.addEventListener('click', () => {
         mobileNav.classList.remove('active');
         hamburgerBtn.classList.remove('active');
       });
-
-      // Cerrar al hacer click en un enlace
-      mobileNav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          mobileNav.classList.remove('active');
-          hamburgerBtn.classList.remove('active');
-        });
-      });
-
-      // Sincronizar contador del carrito en menú móvil
-      this.syncMobileCart();
     }
-  }
 
+    // Cerrar al hacer click en un enlace
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('active');
+        hamburgerBtn.classList.remove('active');
+      });
+    });
+
+    // Sincronizar contador del carrito en menú móvil
+    this.syncMobileCart();
+  }
+}
+  
   syncMobileCart() {
     // Sincronizar el contador del carrito en el menú móvil
     if (window.cartManager) {
