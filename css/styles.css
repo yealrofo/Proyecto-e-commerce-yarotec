@@ -794,3 +794,177 @@ footer {
     gap: 12px;
   }
 }
+
+/* ========================= */
+/* CORRECIONES ESPECÍFICAS PARA INDEX.HTML */
+/* ========================= */
+
+/* Hero section completamente responsiva */
+@media (max-width: 768px) {
+    .hero {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+        padding: 0.5rem 0 !important;
+    }
+    
+    .hero .intro {
+        padding: 1rem !important;
+        text-align: center;
+    }
+    
+    .hero h1 {
+        font-size: 1.5rem !important;
+        line-height: 1.3;
+    }
+    
+    .hero p {
+        font-size: 0.9rem !important;
+        line-height: 1.4;
+    }
+}
+
+/* Video responsivo */
+@media (max-width: 768px) {
+    .video-wrap {
+        margin: 0 auto;
+        max-width: 100%;
+    }
+    
+    .video-wrap iframe {
+        height: 200px !important;
+        min-height: 200px !important;
+    }
+}
+
+/* Grid de promociones responsivo */
+@media (max-width: 1200px) {
+    .promos {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .promos {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 560px) {
+    .promos {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+}
+
+/* Servicios section responsiva */
+@media (max-width: 768px) {
+    #servicios {
+        padding: 2rem 0 !important;
+        margin-top: 2rem !important;
+    }
+    
+    #servicios h2 {
+        font-size: 1.5rem !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    #servicios .container > div {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    
+    #servicios .container > div > div {
+        padding: 1.5rem !important;
+    }
+}
+
+/* Contacto section responsiva */
+@media (max-width: 768px) {
+    #contacto {
+        padding: 2rem 0 !important;
+    }
+    
+    #contacto h2 {
+        font-size: 1.5rem !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    #contacto .container > div {
+        max-width: 100% !important;
+        padding: 0 1rem;
+    }
+    
+    #contacto .container > div > div {
+        padding: 1.5rem !important;
+    }
+}
+
+/* Modal responsivo */
+@media (max-width: 768px) {
+    #product-modal .dialog {
+        width: 95% !important;
+        margin: 1rem;
+    }
+    
+    #product-modal .grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+        padding: 1rem !important;
+    }
+    
+    #modal-gallery {
+        min-height: 200px !important;
+    }
+    
+    #add-to-cart, #close-modal {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Header y navegación responsiva */
+@media (max-width: 768px) {
+    .topbar {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .brand img.symbol {
+        height: 60px !important;
+    }
+    
+    .container {
+        padding: 1rem !important;
+    }
+}
+
+/* Ajustes generales de texto para móviles */
+@media (max-width: 480px) {
+    h1 { font-size: 1.4rem !important; }
+    h2 { font-size: 1.3rem !important; }
+    h3 { font-size: 1.1rem !important; }
+    
+    .card h3 {
+        font-size: 0.9rem !important;
+    }
+    
+    .card .short-desc {
+        font-size: 0.8rem !important;
+    }
+}
+
+/* Fix para elementos que se salen de la pantalla */
+@media (max-width: 480px) {
+    main .container {
+        padding: 0 0.5rem !important;
+    }
+    
+    .card .actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
